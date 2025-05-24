@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Dancing Script', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      overflow-x: hidden; /* changed from overflow: hidden to allow scrolling */
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      animation: fadeInCard 1.8s ease-out;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      text-align: center;
+      color: #cc6699;
+      font-size: 2.5rem;
+      animation: zoomFadeIn 2.5s ease-out;
+    }
+    .flower {
+      text-align: center;
+      font-size: 2rem;
+      animation: beat 1.5s infinite;
+    }
+    .message {
+      margin-top: 1.2rem;
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.2;
+    }
+    .message p {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlideUp 1.5s forwards;
+      animation-delay: calc(var(--i) * 0.6s);
+      margin-bottom: 0.8rem;
+    }
+    .signature {
+      margin-top: 1.5rem;
+      text-align: right;
+      font-style: italic;
+      color: #555;
+      font-weight: bold;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: calc(var(--i) * 0.6s);
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 10s linear infinite;
+      opacity: 0.6;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.5) rotate(45deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    @keyframes fadeInCard {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes zoomFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="flower">🌸</div>
+    <h1>Happy 19th Birthday to Someone Rare and Beautiful</h1>
+    <div class="message">
+      <p style="--i:0">Dear Afia,</p>
+      <p style="--i:1">On this day, 19 years ago, the world quietly became a better place. Not everyone notices it—but I do. I see it in the way you care, the way you love without asking anything in return, and how your presence feels like a warm blanket on a cold night.</p>
+      <p style="--i:2">You carry kindness like a quiet flame, lighting up lives without needing to be seen. You listen when others speak from their wounds, and somehow, your silence says more than most people’s words ever could.</p>
+      <p style="--i:3">You remind me that love isn’t loud. It’s loyal. It’s consistent. It’s in the little things—like how you remember what others forget, how you never give up on people, and how you protect those you love with a fierce, gentle strength.</p>
+      <p style="--i:4">I hope this year gives back to you everything you’ve so freely given to others. I hope you feel cherished, not just today, but always. You deserve a life full of peace, of quiet joy, of safe spaces where your heart can rest and your soul can breathe.</p>
+      <p style="--i:5">Thank you for being exactly who you are.<br>And thank you for letting me see it.</p>
+      <p style="--i:6"><strong>Happy Birthday, Afia.</strong><br>The world is softer because you’re in it.<br>And my world is better because you are.</p>
+      <p style="--i:7"><em>P.S. — I don’t know how to measure love. But if it’s in how often someone thinks of you, or how much your presence means to them... then I hope someday you’ll understand just how much space you take in my heart. You deserve every beautiful thing this life can offer, and I want to be part of the journey that gives it to you.</em></p>
+    </div>
+    <div class="signature" style="--i:8">
+      With warmth,<br>
+      <strong>Ratin</strong>
+    </div>
+  </div>
+  <script>
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
