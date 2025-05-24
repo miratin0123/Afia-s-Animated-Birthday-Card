@@ -180,5 +180,21 @@
       document.body.appendChild(heart);
     }
   </script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+  // Trigger confetti burst from both sides on load
+  window.onload = () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 0 },
+    });
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { x: 1 },
+    });
+  };
+</script>
 </body>
 </html>
